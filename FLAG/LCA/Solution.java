@@ -19,17 +19,17 @@ public class Solution{
 
 	TreeNode LCA(TreeNode root, TreeNode a, TreeNode b){
 	
-		if(root==null) return root;
-		if(root==a || root==b) return root;
+		if (root == null) return root;
+		if (root == a || root == b) return root;
 
 		TreeNode left = null, right = null;
 
 		left = LCA(root.left, a, b);
 		right = LCA(root.right, a, b);
 
-		if(left!=null && right!=null) return root;
+		if (left != null && right != null) return root;
 
-		return left!=null?(left):(right);
+		return left != null ? (left) : (right);
 
 	}
 
@@ -44,8 +44,8 @@ public class Solution{
 		TreeNode n5 = new TreeNode(5);
 
 		n1.left = n2;
-		n2.left=n3;
-		n2.right=n4;
+		n2.left = n3;
+		n2.right = n4;
 		n4.left = n5;
 
 		System.out.println(sl.LCA(n1, n3, n5).val);
